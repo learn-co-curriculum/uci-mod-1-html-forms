@@ -1,21 +1,20 @@
 # HTML Forms
 
+## Learning Goals
 
-## Problem Statement
+- Identify the purpose of a form
+- Write an HTML `form` tag
+- Define the `GET` vs `POST` HTTP methods
+- Write HTML `form` data elements
+
+## Introduction
 
 Up to this point, all of the HTML elements we've seen are used to display data
 _to_ users. This is great, but what happens when we want to get information
-_from_ our users? In order to get user information we need to write HTML forms.
+_from_ our users? In order to get user information, we need to write HTML forms.
 We will learn to write them in this lesson.
 
-## Objectives
-
-1. State the purpose of a form
-2. Write an HTML `form` tag
-3. Define the `GET` vs `POST` HTTP methods
-4. Write HTML `form` data elements
-
-## State The Purpose Of a Form
+## Identify the Purpose of a Form
 
 Forms gather user information. They're just like surveys you might fill out at
 a supermarket or a questionnaire you'd fill out at the doctor's office.
@@ -47,15 +46,15 @@ designed to receive the information sent by an HTML `form`.
 
 Let's write an HTML form. We'll use the `form` tag.
 
-## Write An HTML Form Tag
+## Write an HTML Form Tag
 
-The starting element in an HTML form is the `<form>` tag.  The `form` element
+The starting element in an HTML form is the `<form>` tag. The `form` element
 wraps all the `input` elements that will collect our users' information inside
 of them. We will cover `input` elements in great detail after finishing
 discussing the attributes within a `form` tag.
 
 The `form` tag's first attribute, `action`, decides where the user information
-is sent.  This is typically the URL of a server. This server will run the Ruby,
+is sent. This is typically the URL of a server. This server will run the Ruby,
 PHP, or Java (or other!) code required to store the information the `form`
 sends.
 
@@ -89,7 +88,7 @@ browser stores this information behind the scenes like this:
 
 `owner-name=Bob+Barkley&dog-name=SirBarksALot&favorite-toy=ball`
 
-This is known as the _Query String_.  The browser _then_ attaches the _Query
+This is known as the _Query String_. The browser _then_ attaches the _Query
 String_ onto the location listed in the `form`'s `action` attribute after a `?`
 to create a URL that looks like this:
 
@@ -148,7 +147,7 @@ A `POST` is like a secure envelope. We can't see the information being sent.
 That's why `POST` is the right call when sending sensitive information like
 passwords or national IDs. The user's browser **is not redirected** in this
 case. We can't show you a screenshot of what this looks like because, well,
-there's nothing to show. Usually after a successful POST, the web site will
+there's nothing to show. Usually, after a successful POST, the web site will
 send you to a page that says "Thanks for your purchase" or "Thanks for joining
 our site."
 
@@ -184,7 +183,7 @@ in a single line of text. It looks like this:
 `<input type="text" name="owner-name" placeholder="Full Name"> `
 
 The `placeholder` attribute puts some dummy text into the element. That text
-will be replaced when the user starts filling it in.  The `name` attribute
+will be replaced when the user starts filling it in. The `name` attribute
 gives our input a name.
 
 Here's a screenshot:
@@ -205,7 +204,7 @@ provided to the `label`'s `for` attribute and the browser knows to put them
 close to each other.
 
 Labels are not strictly necessary on HTML forms. **But** they make our site
-better for those using assistive devices.  It's the Right Thing to Do.
+better for those using assistive devices. It's the Right Thing to Do.
 
 Why do we put _both_ labels _and_ placeholders? First, not all browsers and
 assistive devices support placeholder attributes. Labels help assistive devices
@@ -216,14 +215,13 @@ to create an inclusive and accessible web.
 
 Creating an `input` tag with `type="password"` gives our users a place to type
 information that will _not_ be displayed by the browser. Most of the time
-browsers put `*` or dots instead of the character.  This is useful when private
+browsers put `*` or dots instead of the character. This is useful when private
 information is entered, so your password isn't displayed for others to see.
 
 ```html
 <label for="password">What's the password?</label>
 <input type="password" name="password" placeholder="Enter your password here">
 ```
-
 
 Here's a screenshot:
 
@@ -239,7 +237,6 @@ bring up the numeric keypad on supported mobile devices.
 <input id="tel" type="tel" name="phone" placeholder="Phone Number">
 ```
 
-
 Here's a screenshot:
 
 <img src="https://curriculum-content.s3.amazonaws.com/web-development/fewds-html-forms/tel_input.png" alt="Image of tel input">
@@ -253,7 +250,6 @@ holds the text that will appear on the button.
 ```html
 <input type="submit" value="Let me walk your dog!">
 ```
-
 
 Here's a screenshot:
 
@@ -272,7 +268,6 @@ they _must_ have the same `name` attribute.
 <input type="radio" name="plays-well-with-others" value="low"> My dog prefers their walkies solo<br>
 ```
 
-
 Here's a screenshot:
 
 <img src="https://curriculum-content.s3.amazonaws.com/web-development/fewds-html-forms/radio_input.png" alt="Image of radio input">
@@ -289,7 +284,6 @@ Checkboxes are like radio buttons...but you can choose more than one.
 <input type="checkbox" name="toy-4" value="squeaky-toys">Squeaky Toys<br>
 <input type="checkbox" name="toy-5" value="balls">Balls, Frisbees, anything a dog can fetch!<br>
 ```
-
 
 Here's a screenshot:
 
@@ -314,14 +308,13 @@ String_. For the example below the _Query String_ would contain `size="small"`.
 </select>
 ```
 
-
 Here's a screenshot:
 
 <img src="https://curriculum-content.s3.amazonaws.com/web-development/fewds-html-forms/select_input.png" alt="Image of select input">
 
 ### Textarea
 
-Textarea elements are useful if we want our users to be able to be able to write
+Textarea elements are useful if we want our users to be able to write
 multiple lines of text. For example, if we wish to allow our clients to write
 special notes for their dogs, we can let them write as much or as little as they
 like.
@@ -331,7 +324,6 @@ like.
 <textarea name="message"></textarea>
 ```
 
-
 Here's a screenshot:
 
 <img src="https://curriculum-content.s3.amazonaws.com/web-development/fewds-html-forms/textarea_input.png" alt="Image of textarea input">
@@ -339,7 +331,7 @@ Here's a screenshot:
 ## Summary
 
 We use HTML `form`s to collect data from users. Start with a form element. Give
-it an `action` and `method`, probably `POST`.  Inside the `form` add several
+it an `action` and `method`, probably `POST`. Inside the `form` add several
 `input` elements. Use the best `input` for the data you're requesting. Make
 sure that your `input`s are clearly labeled. If you follow these guidelines
 you'll soon be getting all the user data you can handle!
@@ -352,7 +344,5 @@ you'll soon be getting all the user data you can handle!
 - [MDN - HTML - Button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
 - [HTML Goodies - Form Basics](http://www.htmlgoodies.com/primers/html/article.php/3881421)
 - [HTML Form Generator](http://www.phpform.org/)
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/HTML-Forms-and-iFrames'>HTML Forms and iFrames</a> on Learn.co and start learning to code for free.</p>
 
 [article]: https://www.htmlgoodies.com/primers/html/article.php/3881421
